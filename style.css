@@ -1,0 +1,546 @@
+:root {
+    --element-shadow: 0 0 16px rgba(0, 0, 0, 0.12), 2px 10px 16px rgba(0, 0, 0, 0.24);
+    --element-shadow2: 0 0 16px rgba(0, 0, 0, 0.12), 0 16px 16px rgba(0, 0, 0, 0.24);
+    --element-background-default: #ffffff4d;
+    --element-accent-default: #038de9;
+    --element-accent2: #03568e;
+    --font-color-default: white;
+    --font-color-default2: black;
+    --font-shadow: 3px 2px 3px #00000040;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height : 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #2d2d2de0;
+    border-radius: 8px;
+}
+
+* {
+    /* border: 1px solid #3498db; */
+}
+
+alinea{
+    padding: 10px 0 0 0;
+    margin-block: 0;
+}
+
+body {
+    margin: 0px;
+    overflow: hidden;
+    font-family: Leelawadee ui , Arial;
+    font-size: 50px;
+    letter-spacing: 0.05rem;
+}
+
+#interactivebackground {
+    position: absolute;
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    justify-content: center;
+    z-index: -1;
+    transition : background 500ms;
+    background: hsl(0 0% 93% / 1);
+}
+
+#interactivebackground .iphone {
+    translate: 0% 100%;
+    transition: translate 700ms ease;
+    max-width: 100%;
+}
+
+#interactivebackground.animate .iphone {
+    translate: 0% 57%;
+    filter: drop-shadow(2px 2px 4px #00000080);
+    transition: translate 800ms ease, filter 1000ms ease;
+    transform: rotate(0deg);
+}
+
+#interactivebackground .iPad, #interactivebackground .Samsung, #interactivebackground .Tablet, #interactivebackground .Laptop {
+    position: absolute;
+    translate: -200% 25%;
+    max-height : 50%;
+    opacity : 0;
+    transition: translate 800ms , height 500ms, opacity 800ms;
+}
+
+#interactivebackground.animate2 .iPad {
+    translate: 0% 10%;
+    opacity : 1;
+    min-height : 700px;
+}
+
+#interactivebackground.animate2 .iPhone {
+    translate: 150% -20%;
+    opacity : 1;
+    scale : 0.5;
+}
+
+#interactivebackground.animate3 .iPhone, #interactivebackground.animate4 .iPhone {
+    translate: 150% 3.5%;
+    opacity: 1;
+    scale: 0.5;
+}
+
+#interactivebackground.animate3 .iPad,#interactivebackground.animate4 .iPad {
+    translate: 103% 10%;
+    opacity : 1;
+    min-height : 700px;
+}
+
+#interactivebackground.animate1 {
+    background: url(./assets/images/iPhone/background-paysage.webp);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#interactivebackground.animate2 {
+    background: url(./assets/images/iPad/background-paysage.webp);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#interactivebackground.animate3 {
+    background: url(./assets/images/Samsung/background-paysage.webp);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#interactivebackground.animate4 {
+    background: url(./assets/images/Lenovo/background.webp);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#interactivebackground.animate5 {
+    background: url(./assets/images/Microsoft/background.webp);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#interactivebackground.animate1 .iphone {
+    transform: scale(0.5);
+    translate: 0% 10%;
+    transition: translate 500ms ease , transform 1000ms ease;
+}
+
+header {
+    position: absolute;
+    display: flex;
+    background: var(--background-1);
+    top: 10px;
+    left: 10px;
+    border-radius: 10px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    max-width: 75%;
+    z-index: 1;
+    background: var(--element-background-default);
+    align-items: center;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.12), 2px 10px 16px rgba(0, 0, 0, 0.24);
+}
+
+header ::-webkit-scrollbar {
+    height: 2px;
+}
+
+header #logo {
+    height: 30px;
+    padding: 10px;
+    filter:  drop-shadow(3px 2px 3px #00000060);
+    transition: filter 700ms;
+    width: 30px;
+}
+
+header #logo:hover {
+    filter: drop-shadow(2px 2px 1.5px var(--element-accent2));
+    transition: filter 200ms ease, fill 500ms;
+    fill : var(--element-accent-default);
+}
+
+header #logo svg {
+    height: 100%;
+    width: 100%;
+}
+
+header #cat {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    overflow: auto;
+    padding: 4px 0px;
+    justify-content: flex-start;
+}
+
+#cat button {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    display: flex;
+    height: 40px;
+    background: transparent;
+    align-items: center;
+    margin: 0px 21px;
+    border-radius : 5px;
+    box-shadow: 0px 0px 0px transparent;
+    transition: background 1000ms , box-shadow 300ms , border-radius 0.5s ease , height 0.5s ease , margin 0.5s ease;
+    /* height: 0; */
+}
+
+header.reduce #cat button {
+    margin: 0px 0px;
+    height: 0;
+    transition: background 1000ms, box-shadow 300ms, border-radius 0.5s ease, height 0.5s ease, margin 0.5s ease;
+}
+
+#cat button:hover {
+    background: var(--element-accent-default);
+    transition : background 300ms , box-shadow 300ms , border-radius 0.5s ease;
+    border-radius : 15px;
+    border : 0px;
+    box-shadow: 2px 2px 3px #03568e;
+}
+
+#cat button img {
+    height: 80%;
+    filter: drop-shadow(3px 2px 3px #00000040)  invert(0);
+    transition : filter 300ms;
+}
+
+#cat button:hover img {
+    filter: invert(1) drop-shadow(3px 2px 3px #00000060);
+    transition : filter 300ms;
+}
+
+
+#bottommsg {
+    display: flex;
+    position: fixed;
+    bottom: 10px;
+    left: 25%;
+    right: 25%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: nowrap;
+    color: white;
+    font-size: 24px;
+    transition: translate 0.5s ease;
+    translate: 0% 115%;
+    filter: drop-shadow(2px 2px 4px #00000080);
+}
+
+#bottommsg.animate {
+    transition: translate 0.5s ease;
+    translate: 0% 0%;
+}
+
+#bottommsg img {
+    height : 24px;
+}
+
+#bottommsg img.animate {
+    transform: rotateX(180deg);
+    transition: transform 0.5s;
+}
+
+#bottommsg.animate img {
+    translate: 0px -25%;
+    transform: rotateX(0deg);
+    transition: transform 0.7s;
+}
+
+#controlbutton {
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    z-index: 1;
+    border: 0px;
+    border-radius: 22.5%;
+    background: #2d2d2d99;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    transition : background-color 500ms;
+    box-shadow: var(--element-shadow2);
+    background: var(--element-background-default);
+}
+
+#controlbutton.ctrlbutton2 {
+    right: 80px;
+}
+
+#controlbutton:hover {
+    transition : background-color 500ms;
+    background : #038de9;
+}
+
+#controlbutton img {
+    height: 80%;
+    filter: drop-shadow(2px 2px 4px #00000080);
+}
+
+#controlbutton:hover img {
+    filter: drop-shadow(1px 0px 1px white);
+}
+
+section {
+    height: 100vh;
+    width: 100%;
+    overflow: auto;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    font-size: 35px;
+    text-align: -webkit-center;
+    flex-direction: column;
+    text-shadow: var(--font-shadow);
+}
+
+container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+    color: black;
+    /* z-index: 1; */
+    position: relative;
+}
+
+container .text , #interactivebackground .text {
+    color: black;
+    position: fixed;
+    bottom: 10px;
+    text-shadow: var(--font-shadow);
+}
+
+container.container1 {
+    background: transparent;
+    backdrop-filter: none;
+    transition: backdrop-filter 1s ease;
+}
+
+container.container1.animate {
+    background: transparent;
+    transition: backdrop-filter 1.5s;
+}
+
+container.container1 img {
+    scale: 0.9;
+    transition: scale 0.5s ease;
+    max-width: 100%;
+}
+
+container.container1.animate img {
+    scale: 1;
+    transition: scale 0.5s ease, filter 250ms ease-in-out;
+    position: sticky;
+    top: 25%;
+    filter: drop-shadow(3px 2px 3px #00000060);
+}
+
+container.container2 {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    scale: 0.85;
+    position: relative;
+    transform: translate(0px, 18px);
+    background: #ffffff;
+    transition: transform 0.5s ease, scale 0.5s ease, border-radius 1.5s ease, background-color 1500ms;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.12), 0 16px 16px rgba(0, 0, 0, 0.24);
+}
+
+container.container2.animate {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    scale: 1;
+    position: unset;
+    transform: translate(0px, 0px);
+    transition: transform 0.5s ease, scale 0.5s ease, border-radius 1.5s ease, background-color 1500ms;
+    background: transparent;
+    color: white;
+    height: 100vh;
+}
+
+.container3 {
+    text-shadow: none;
+    color: black;
+    background: white;
+}
+
+.container4 #map {
+    height: 50%;
+    width: 50%;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.12), 0 16px 16px rgba(0, 0, 0, 0.24);
+    border-radius: 20px;
+}
+
+#extandiconui {
+    display: flex;
+    position: absolute;
+    top: 21px;
+    background: lightgrey;
+    left: 50%;
+    width: 50px;
+    height: 8px;
+    border-radius: 20px;
+    translate : -25px 0px;
+    transition : scale 0.5s ease;
+}
+
+container.container2.animate #extandiconui {
+    scale : 0;
+    transition : scale 0.5s ease;
+}
+
+.container4 #text1 {
+    position: relative;
+    top: 20px;
+    letter-spacing: 0.05rem;
+    font-size: 60px;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.container4 #text1 img {
+    height: 150px;
+    background: white;
+    border-radius: 22.5px;
+}
+
+.container2 .text span , #interactivebackground .text span {
+    position: absolute;
+    bottom: 0;
+    translate: 0px 100%;
+    opacity: 0;
+    transition: translate 600ms , opacity 600ms;
+    min-width: 100%;
+    flex-direction: row;
+    left: 0;
+    right: 0;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container2 .text span.active , #interactivebackground .text span.active {
+    translate: unset !important;
+    opacity: 1 !important;
+    position: relative !important;
+    background: var(--element-background-default);
+    padding: 8px 8px;
+    border-radius: 30px;
+    box-shadow: var(--element-shadow);
+    z-index: 1;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+container2 .text, #interactivebackground .text {
+    /* overflow :hidden; */
+}
+
+.container2 .text::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+}
+
+#interactivebackground.animate3 .Samsung, #interactivebackground.animate4 .Samsung {
+    opacity: 1;
+    translate: -200% 57%;
+}
+
+#interactivebackground.animate4 .Tablet {
+    opacity: 1 !important;
+    translate: -159% 17%;
+    min-height: 635px;
+}
+
+#interactivebackground.animate5 .Tablet {
+    opacity: 1 !important;
+    translate: -179% 17%;
+    min-height: 635px;
+}
+
+#interactivebackground.animate5 .Samsung {
+    opacity: 1;
+    translate: -281% 57%;
+}
+
+#interactivebackground.animate5 .iPad {
+    translate: 152% 10%;
+    opacity: 1;
+    min-height: 700px;
+}
+
+
+#interactivebackground.animate5 .iPhone {
+    translate: 127% 3.5%;
+    opacity: 1;
+    scale: 0.5;
+}
+
+#interactivebackground.animate5 .Laptop {
+    opacity: 1 !important;
+    translate: 0% 17%;
+    min-height: 635px;
+}
+
+  .scroll-indicator {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+  }
+
+container.container2 {
+    height: 400vh !important;
+}
+
+#interactivebackground.animate6 .iPad,
+ #interactivebackground.animate6 .Samsung,
+ #interactivebackground.animate6 .Tablet,
+ #interactivebackground.animate6 .Laptop
+ {scale: 0.8 !important;position: absolute;/* top: 10vh; */transition: scale 1000ms, opacity 1000ms;opacity: 0 !important;}
+
+#interactivebackground.animate6 .iPhone {
+    scale: 0  ! important;
+    transition: scale 1000ms , opacity 1000ms , translate 1000ms !important;
+    /* translate: 127% -10% ! important; */
+    opacity: 0 !important;
+    top: 10vh !important;
+    /* position: absolute; */
+}
+
+#interactivebackground img, #interactivebackground .iphone {
+    filter: drop-shadow(2px 3px 4px rgb(0 0 0 / 30%));
+    transition: translate 800ms, height 500ms, opacity 800ms;
+}
