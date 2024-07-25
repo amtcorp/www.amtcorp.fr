@@ -253,11 +253,10 @@ div#spectacle-select {
 }
 
 #spectacle-select button.selected {
-    border-color: var(--accent-default);
+    border-color: var(--accent-default) ! important;
     background: var(--background-default);
     color: var(--color-default);
-    border-bottom-color: var(--background-default);
-
+    border-bottom-color: var(--background-default) ! important;
 }
 
 #spectacle-select button {
@@ -266,11 +265,11 @@ div#spectacle-select {
     border: 2px solid;
     margin: 0px 5px;
     background: var(--accent-default);
-    border-bottom-color: var(--accent-default);
     transition: all 500ms;
     font-weight: bold;
-    /* color: white; */
-
+    color: black;
+    border-color: var(--background-default) !important;
+    border-bottom-color: var(--accent-default) ! important;
 }
 
 #spectacle-select button:hover {
