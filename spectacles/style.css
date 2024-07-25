@@ -1,0 +1,282 @@
+:root {
+    --background-default: #101010;
+    --background-default2: white;
+    --accent-default: #c43100;
+    --accent-default2: #2d2d2d99;
+    --accent-default3: #FF5722;
+    --color-default : white;
+    --color-default2 : black;
+    --font-size-normal: 25px;
+    --font-size-title: 45px;
+    --button-default-font-size: 15px;
+    --button-font-size : 17px;
+    --otherElement-font-size : 20px;
+    --Amt-accent-default: #038de9;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height : 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent-default);
+    border-radius: 8px;
+}
+
+@media screen and (max-width :550px) {
+.slider-container {
+    flex-direction : column !important;
+    max-width: 90% !important;
+}
+    .slider {
+width: 100% !important;    
+    }
+    .info {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-top: 11vh;
+    Z-index : -1;
+}
+}
+
+body {
+    margin: 0px;
+    font-family: Leelawadee, Arial;
+    background: var(--background-default);
+    color: var(--color-default);
+    letter-spacing: 0.05rem;
+    line-height: 2.00rem;
+    /* height: 100vh; */
+
+}
+
+.slider-container {
+    max-width: 100%;
+    margin: auto;
+    text-align: center;
+    min-height: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 70vh;
+    align-items: center;
+    user-select: none;
+
+}
+
+.slider {
+    position: relative;
+    width: 50%;
+    min-height: 100%;
+    height: 100%;
+}
+
+.slider #current-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+    transition: background-image 600ms ease;
+    min-height: 100%;
+    background-size: cover ! important;
+    background-position: center !important;
+    background-repeat: no-repeat;
+}
+
+.prev {
+    left: 10px;
+}
+
+.info {
+    width: 47%;
+    display: flex;
+    flex-direction: column;
+    max-width: 50%;
+    padding: 21px;
+    height: 100%;
+    min-height: 100%;
+    position: relative;
+}
+
+.controls {
+    margin-top: 10px;
+    width: 60px;
+    position: absolute;
+    bottom: 10px;
+    right: 21px;
+}
+
+
+#spectacledescription {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    margin-bottom: 21px;
+}
+
+.prev, .next {
+    z-index: 9;
+    position: absolute;
+    top: 50%;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    translate: 0% -25%;
+    position: absolute;
+    top: 50%;
+    height: 50px;
+    filter: drop-shadow: 2px 2px 5px var(--accent-default2) , 0px 0px 0px var(--accent-default2);
+    width: 70px;
+    fill: var(--accent-default);
+    transition: fill 500ms , height 500ms ease;
+}
+
+.prev:hover , .next:hover {
+    fill: var(--accent-default3);
+    height : 60px;
+}
+
+.next {
+    right: 10px;
+}
+
+#title {
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+#spectacledescription p {
+    margin: 0px;
+}
+
+#description {
+    height: 80%;
+    padding: 21px;
+    font-size: 19px;
+    overflow: auto;
+}
+
+.pausebutton {
+    top: 50%;
+    background: var(--accent-default);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    font-weight: bold;
+    transition: all 500ms;
+}
+
+.bounce {
+    animation: bounce 200ms;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        scale: 1;
+    }
+    50% {
+        scale: 1.2;
+    }
+}
+
+.pausebutton:hover {
+    background : var(--accent-default3);
+    scale : 1.1;
+}
+
+#spectacledescription #audience {
+    width: 100px;
+    font-weight: bold;
+    margin-right: 3px;
+}
+
+#spectacledescription #duration {
+    width: 70px;
+    margin-right: 20px;
+    color: lightgreen;
+    background: grey;
+    border-radius: 8px;
+}
+
+.controls button img {
+    width: 100%;
+    height: 100%;
+    transition: scale 700ms linear(0 0%, 0 2.27%, 0.02 4.53%, 0.04 6.8%, 0.06 9.07%, 0.1 11.33%, 0.14 13.6%, 0.25 18.15%, 0.39 22.7%, 0.56 27.25%, 0.77 31.8%, 1 36.35%, 0.89 40.9%, 0.85 43.18%, 0.81 45.45%, 0.79 47.72%, 0.77 50%, 0.75 52.27%, 0.75 54.55%, 0.75 56.82%, 0.77 59.1%, 0.79 61.38%, 0.81 63.65%, 0.85 65.93%, 0.89 68.2%, 1 72.7%, 0.97 74.98%, 0.95 77.25%, 0.94 79.53%, 0.94 81.8%, 0.94 84.08%, 0.95 86.35%, 0.97 88.63%, 1 90.9%, 0.99 93.18%, 0.98 95.45%, 0.99 97.73%, 1 100%);
+}
+
+.image-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    max-height: calc(100vh - 20%);
+    overflow-y: auto;
+    height: 12vh;
+    margin-top: 20px;
+
+}
+
+.image-list img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease;
+    object-fit: cover;
+}
+
+.image-list img:hover {
+    border-color: var(--accent-default);
+}
+
+.image-list img.selected {
+    border-color: var(--accent-default);
+    border-radius : 8px;
+}
+
+div#spectacle-select {
+    display: flex;
+    flex-wrap: nowrap;
+    height: 5vh;
+    flex-direction: row;
+    justify-content: center;
+    margin: 1vh 0px;
+}
+
+#spectacle-select button.selected {
+    border-color: var(--accent-default);
+    background: var(--background-default);
+    color: var(--color-default);
+    border-bottom-color: var(--background-default);
+
+}
+
+#spectacle-select button {
+    border-radius: 12px 12px 0px 0px;
+    padding: 5px 21px;
+    border: 2px solid;
+    margin: 0px 5px;
+    background: var(--accent-default);
+    border-bottom-color: var(--accent-default);
+    transition: all 500ms;
+    font-weight: bold;
+    /* color: white; */
+
+}
+
+#spectacle-select button:hover {
+    background: var(--background-default2);
+    border-bottom-color: var(--background-default2) !important;
+    color: black;
+    border-color: var(--background-default);
+
+}
