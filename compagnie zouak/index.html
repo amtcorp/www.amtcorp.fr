@@ -1,0 +1,241 @@
+<html>
+<head>
+<link rel="stylesheet" href="./style.css">
+
+
+    <link rel="stylesheet" href="./map.css">
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin="" />
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.3.0/dist/MarkerCluster.css" />
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.3.0/dist/MarkerCluster.Default.css" />
+
+
+
+<link rel="icon" href="./assets/icons/pictures-icon.png">
+<title>Amt UI Pro - untitled -</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>   
+<div id="loader" class="active">
+    <div id="logo1">
+    <img src="./assets/logos/logo3.png">
+    <div id="response">
+    <span id="firstline">Compagnie Zouak</span>
+        <alinea></alinea>
+        <span id="subtitle">Théâtre de marionnettes &amp; d'objets</span></div>
+</div>
+</div>
+<header>
+<div id="logo"><img src="./assets/logos/logo3.png" style="
+">
+    <div id="response">
+    <span id="firstline">Compagnie Zouak</span><alinea></alinea><span id="subtitle">Théâtre de marionnettes &amp; d'objets</span></div>
+
+</div>
+<div id="catcontainer">
+<button>accueil</button>
+<button>À Propos</button>
+<button>Production En Cours</button>
+<button>Galerie</button>
+<button>Contact</button></div>
+
+</header>
+<div id="headerbackground">
+</div>
+<section id="section1">
+    <div id="caroussel">
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="128.000000pt" height="128.000000pt" viewBox="0 0 128.000000 128.000000" preserveAspectRatio="xMidYMid meet" id="slidecontroller" class="previous">
+<g transform="translate(0.000000,128.000000) scale(0.100000,-0.100000)" stroke="none">
+<path d="M845 1265 c-37 -20 -551 -530 -571 -567 -17 -33 -18 -86 -1 -113 7 -11 138 -144 292 -296 211 -208 288 -278 311 -283 90 -20 174 86 133 167 -6 12 -111 122 -232 244 l-222 223 227 227 c196 198 227 233 234 267 17 96 -87 176 -171 131z"></path>
+</g>
+</svg>
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="128.000000pt" height="128.000000pt" viewBox="0 0 128.000000 128.000000" preserveAspectRatio="xMidYMid meet" id="slidecontroller" class="continue">
+<g transform="translate(0.000000,128.000000) scale(0.100000,-0.100000)" stroke="none">
+<path d="M333 1265 c-58 -25 -89 -104 -62 -158 6 -12 111 -122 232 -244 l222 -223 -227 -227 c-198 -200 -227 -233 -234 -268 -15 -80 62 -155 144 -140 32 6 77 47 310 278 151 150 280 284 288 299 17 33 18 86 1 113 -24 40 -563 564 -590 574 -36 14 -45 13 -84 -4z"></path>
+</g>
+</svg>
+
+</div>
+    <div id="animationcontroller" class="hide">
+    <div id="imageindexer">
+    <div id="imageindex" class="1 selected"></div>
+    <div id="imageindex" class="2"></div>
+    <div id="imageindex" class="3"></div>
+    <div id="imageindex" class="4"></div>
+    <div id="imageindex" class="5"></div>
+    <div id="imageindex" class="6"></div>
+    <div id="imageindex" class="7"></div>
+    <div id="imageindex" class="8"></div>
+    <div id="imageindex" class="9"></div>
+    </div>
+    
+    <button id="playbutton"><img src="./assets/icons/play.png"></button>
+<button id="scrolltotop"><img src="./assets/icons/top.png"></button>
+</div>
+</section><section id="section2">
+    <div id="title">
+    <span>À Propos De La Compagnie Zouak :</span>
+</div>
+<div id="textcontainer">
+<span>
+La Compagnie Zouak a été créée en 1990 par Alban Thierry à sa sortie de l’ESNAM, elle compte plus de 13 créations. Elle développe le rapport comédien-marionnette et s’inspire de la satire populaire. Ce théâtre va de la rue à la scène.
+</span>
+<alinea></alinea>
+<span>
+ Sa volonté est de jouer pour un large public avec ses marionnettes et l’un de ses héros légendaire : Polichinelle, personnage universel, plein d’humour et d'insoumission …
+</span>
+<alinea></alinea>
+<span>
+Son spectacle Crépuscule des temps anciens ouvre sur d’autres traditions avec une pratique artistique ouverte au monde.
+</span>
+<alinea></alinea>
+<span>
+L'association est depuis sa création régulièrement soutenue par le ministère de la culture, la région Languedoc-Roussillon, la ville de Ganges et de nombreux partenaires.
+</span>
+ <alinea></alinea>
+<span>
+La Compagnie privilégie le rapport comédien-marionnette et propose un théâtre actuel de proximité qui tire son héritage de la satire populaire. Ce théâtre va de la rue à la scène. Il est avant tout festif et s'adresse aux petits comme aux grands. Tout en respectant les codes traditionnels, Alban Thierry et ses marionnettes revisitent l’esprit du Théâtre forain.
+</span>
+<alinea></alinea>
+<span>
+La Compagnie dispose d’une gamme de spectacles très large et propose régulièrement des interventions sur mesures : Théâtre d’intervention, Parade de carnaval, Théâtre d’objet, marionnettes à gaines, à tringles, marionnettes géantes, théâtre forain, et numéros de cabaret.
+</span>
+<alinea></alinea>
+<span>
+La Compagnie Zouak propose également des exposition-spectacles, espaces de découverte de l'univers de la marionnette, des interventions pédagogiques ouvertes à un large public sous formes d'ateliers de théâtre et de marionnettes, d'ateliers d'écritures, de répétitions et de représentations de saynètes, ainsi que des formations à la manipulation.
+</span>
+<alinea></alinea>
+<span>
+L'originalité de la Compagnie tient dans l'actualisation des symboles du théâtre de marionnettes, tel Polichinelle, personnage populaire universel, plein d’humour et d'insoumission face aux dogmes et autres absurdités de l'humaine société
+    </span>
+</div>
+
+<div id="presentation">
+    <div id="person" class="person1">
+    <img src="./assets/images/Alban.jpg">
+        <span id="identity">THIERRY Alban</span>
+<span id="description">Comédien-marionnettiste</span>
+    </div>
+    
+    <div id="person" class="person2">
+    <img src="./assets/images/Sandra.jpg">
+    <span id="identity">DE SOUSA Sandra</span>
+        <span id="description">Chargée de Diffusion</span>
+    </div>
+</div>
+
+</section>
+
+
+<section id="section3">
+<div id="title"><span>Conférence Imaginaire et concrète sur l'acteur marionnettiste</span></div>
+<div id="infosprod">
+<img src="./assets/images/production/1.jpg" id="img-desc">
+<div id="textcontainer">
+<div id="text">
+<alinea>
+</alinea><span>
+Une nouvelle idée est née dans la Compagnie Zouak ! 
+Après des années de relation passionnée entre notre marionnettiste Alban Thierry et ses marionnettes à gaines , l'envie de plonger au coeur de cette relation s'est faite sentir.
+</span><span>
+Sous forme de conférence, ce nouveau spectacle veut permettre aux spectateurs de comprende le pouvoir du marionnettiste sur ses personnages,mais surtout de percevoir l'influence qu'exercent les marionnettes sur leurs maitres. A suivre...
+</span>
+
+</div>
+    <div id="dates">
+    <button>Précommande<img src="./assets/icons/continue2.png"></button>
+<div id="location">
+<span>En résidence le :</span>
+<span id="day"></span>
+<span> à </span>
+<span id="adress"></span>
+</div>
+    <div id="date">
+<span>
+Dates de tournée : </span>
+<span id="calendar"></span>
+</div>
+</div>
+    </div>
+</div>
+
+</section>
+
+
+<section id="section4">    
+<div id="title">
+    <span>Galerie</span>
+</div>
+<div id="gallery">
+    <div id="imgcontainer"></div>
+<div id="selector">
+    <div id="picture" class="picture1 hide"></div>
+        <div id="picture" class="picture2"></div>
+        <div id="picture" class="picture3"></div>
+        <div id="picture" class="picture4"></div>
+        <div id="picture" class="picture5"></div>
+</div>
+    </div>
+</section>
+
+<section id="section5">
+<div id="title">
+    <span>Nous Contacter</span>
+</div>
+<div id="contact"><div id="left">
+    <div id="contact-item">
+    <img id="contact-image" src="./assets/images/contact.jpg">
+    <div id="contact-name">Compagnie Zouak</div><div id="buttonspannel">
+    <button id="call"></button>
+        <button id="mail"></button>
+        <button id="social" class="social1"></button>
+</div>
+</div>
+</div>
+    
+    <div id="map"></div>
+    </div>
+</section>
+<footer>
+<div id="copyrights" class="" style="scroll-behavior: smooth;">
+        <span>© 2024  <accent class="letter-accent" style="
+">C</accent>ompagnie <accent class="letter-accent">Z</accent>ouak.</span>
+    <span class="AmtCorp">2024 © <accent class="Amt-accent-default">Amt Corp.</accent> All Rights Reserved</span>
+</div>
+</footer>
+
+<div id="debugwindow">
+
+<button id="close">
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="128.000000pt" height="128.000000pt" viewBox="0 0 128.000000 128.000000" preserveAspectRatio="xMidYMid meet" style="
+">
+
+<g transform="translate(0.000000,128.000000) scale(0.100000,-0.100000)" stroke="none" style="
+">
+<path d="M94 1270 c-42 -17 -74 -68 -74 -118 l0 -46 232 -233 232 -233 -226 -227 c-145 -146 -229 -238 -233 -256 -23 -92 60 -175 152 -152 18 4 105 83 246 223 l217 216 218 -216 c138 -138 227 -219 245 -223 92 -23 175 60 152 152 -4 18 -86 108 -233 256 l-226 227 232 233 232 233 0 47 c0 82 -71 139 -152 122 -25 -6 -85 -59 -251 -223 l-217 -216 -213 211 c-234 234 -262 252 -333 223z"></path>
+</g>
+</svg>
+    </button>
+
+<div id="title">Debug Mode</div>
+    
+<div id="dimensionspannel">
+<span id="heightOutput"></span>
+<span id="widthOutput"></span>
+    </div>
+        <span id="subtitle">colors : </span>
+    <div id="colorspannel">
+<div id="color" class="color1"></div>
+<div id="color" class="color2"></div>
+<div id="color" class="color3"></div>
+<div id="color" class="color4"></div>
+        <div id="color" class="color5"></div></div>
+<span>Amt Ui Version : Amt Ui Pro  (Beta/1.0)</span>
+</div>
+
+<script type="text/javascript" src="./script.js"></script>
+<script type="text/javascript" src="./map.js"></script>
+<script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js" integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw==" crossorigin=""></script>
+    <script type='text/javascript' src='https://unpkg.com/leaflet.markercluster@1.3.0/dist/leaflet.markercluster.js'></script>
+
+</body></html>
