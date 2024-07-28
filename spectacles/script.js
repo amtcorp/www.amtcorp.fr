@@ -99,10 +99,10 @@ function toggleSlider() {
     void pauseButtonImage.offsetWidth; // Trigger reflow to restart the animation
     pauseButtonImage.classList.add('bounce');
     if (sliderInterval) {
-        pauseButtonImage.src = "https://www.amtcorp.fr/assets/icons/play.png";
+        pauseButtonImage.src = "./assets/icons/play.png";
         stopSlider();
     } else {
-        pauseButtonImage.src = "https://www.amtcorp.fr/assets/icons/pause.png";
+        pauseButtonImage.src = "./assets/icons/pause.png";
         startSlider();
     }
 }
