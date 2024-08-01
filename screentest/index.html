@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Écran Tactile</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+        }
+        .touch-indicator {
+position: absolute;
+background-color: red;
+pointer-events: none;
+height: 100%;
+width: 100%;
+}
+    </style>
+</head>
+<body>
+    <div class="touch-indicator" id="indicator"></div>
+    <script>
+        const colors = ["red", "green", "blue", "yellow", "purple", "orange"];
+        let colorIndex = 0;
+
+        document.body.addEventListener('touchstart', function(event) {
+            // Change background color
+            colorIndex = (colorIndex + 1) % colors.length;
+            document.body.style.backgroundColor = colors[colorIndex];
+            
+            // Move touch indicator
+            const touch = event.touches[0];
+            const indicator = document.getElementById('indicator');
+            indicator.style.left = `${touch.pageX - 25}px`;
+            indicator.style.top = `${touch.pageY - 25}px`;
+        });
+
+        document.body.addEventListener('touchmove', function(event) {
+            // Move touch indicator
+            const touch = event.touches[0];
+            const indicator = document.getElementById('indicator');
+            indicator.style.left = `${touch.pageX - 25}px`;
+            indicator.style.top = `${touch.pageY - 25}px`;
+        });
+    </script>
+</body>
+</html>
