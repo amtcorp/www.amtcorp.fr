@@ -8,45 +8,82 @@
         body {
             margin: 0;
             height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             background-color: white;
+            position: relative;
+            overflow: hidden;
         }
-        .touch-indicator {
-position: absolute;
-background-color: red;
-pointer-events: none;
-height: 100%;
-width: 100%;
-}
+        #drawingCanvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
     </style>
 </head>
 <body>
-    <div class="touch-indicator" id="indicator"></div>
     <script>
         const colors = ["red", "green", "blue", "yellow", "purple", "orange"];
         let colorIndex = 0;
+        let inDrawingMode = false;
+        let isDrawing = false;
+        let lastX = 0;
+        let lastY = 0;
 
         document.body.addEventListener('touchstart', function(event) {
-            // Change background color
-            colorIndex = (colorIndex + 1) % colors.length;
-            document.body.style.backgroundColor = colors[colorIndex];
-            
-            // Move touch indicator
-            const touch = event.touches[0];
-            const indicator = document.getElementById('indicator');
-            indicator.style.left = `${touch.pageX - 25}px`;
-            indicator.style.top = `${touch.pageY - 25}px`;
+            if (!inDrawingMode) {
+                // Change background color
+                document.body.style.backgroundColor = colors[colorIndex];
+                colorIndex++;
+                
+                // Check if all colors have been tested
+                if (colorIndex >= colors.length) {
+                    inDrawingMode = true;
+                    document.body.style.backgroundColor = "white";
+                    initializeCanvas();
+                }
+            } else {
+                isDrawing = true;
+                const touch = event.touches[0];
+                lastX = touch.pageX;
+                lastY = touch.pageY;
+            }
         });
 
         document.body.addEventListener('touchmove', function(event) {
-            // Move touch indicator
-            const touch = event.touches[0];
-            const indicator = document.getElementById('indicator');
-            indicator.style.left = `${touch.pageX - 25}px`;
-            indicator.style.top = `${touch.pageY - 25}px`;
+            if (inDrawingMode && isDrawing) {
+                const touch = event.touches[0];
+                drawLine(lastX, lastY, touch.pageX, touch.pageY);
+                lastX = touch.pageX;
+                lastY = touch.pageY;
+            }
         });
+
+        document.body.addEventListener('touchend', function(event) {
+            if (inDrawingMode) {
+                isDrawing = false;
+            }
+        });
+
+        function initializeCanvas() {
+            const canvas = document.createElement('canvas');
+            canvas.id = 'drawingCanvas';
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            document.body.appendChild(canvas);
+        }
+
+        function drawLine(x1, y1, x2, y2) {
+            const canvas = document.getElementById('drawingCanvas');
+            const ctx = canvas.getContext('2d');
+            ctx.strokeStyle = "black";
+            ctx.lineWidth = 5;
+            ctx.beginPath();
+            ctx.moveTo(x1, y1);
+            ctx.lineTo(x2, y2);
+            ctx.stroke();
+            ctx.closePath();
+        }
     </script>
 </body>
 </html>
