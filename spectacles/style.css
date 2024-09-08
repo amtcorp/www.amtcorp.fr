@@ -38,6 +38,25 @@ width: 100% !important;
     margin-top: 11vh;
     Z-index : -1;
 }
+    #controlscontainer {
+        position : absolute;
+        bottom: 0px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        min-width: 100%;
+        left: 0px;
+        justify-content: center;
+    }
+   #controlscontainer #link {
+       position : absolute;
+       left: 25%;
+       display: flex;
+       flex-direction: row;
+       align-content: center;
+       justify-content: center;
+       align-items: center;
+   }
 }
 
 body {
@@ -71,6 +90,7 @@ body {
     width: 50%;
     min-height: 100%;
     height: 100%;
+    background-color: black;
 }
 
 .slider #current-image {
@@ -80,7 +100,7 @@ body {
     position: relative;
     transition: background-image 600ms ease;
     min-height: 100%;
-    background-size: cover ! important;
+    background-size: contain ! important;
     background-position: center !important;
     background-repeat: no-repeat;
 }
@@ -130,9 +150,9 @@ body {
     top: 50%;
     height: 50px;
     filter: drop-shadow: 2px 2px 5px var(--accent-default2) , 0px 0px 0px var(--accent-default2);
-    width: 70px;
-    fill: var(--accent-default);
-    transition: fill 500ms , height 500ms ease;
+    width:70px;
+    fill:var(--accent-default);
+    transition:fill 500ms , height 500ms ease;
 }
 
 .prev:hover , .next:hover {
@@ -158,6 +178,7 @@ body {
     padding: 21px;
     font-size: 19px;
     overflow: auto;
+    text-align: -webkit-left;
 }
 
 .pausebutton {
@@ -198,12 +219,13 @@ body {
     margin-right: 3px;
 }
 
-#spectacledescription #duration {
+#spectacledescription #duration, #spectacledescription #date {
     width: 70px;
-    margin-right: 20px;
-    color: lightgreen;
-    background: grey;
+    margin-right: 10px;
+    color: var(--color-default);
+    background: var(--accent-default);
     border-radius: 8px;
+    padding: 0px 5px;
 }
 
 .controls button img {
@@ -221,17 +243,20 @@ body {
     overflow-y: auto;
     height: 12vh;
     margin-top: 20px;
-
+    gap: 10px;
 }
 
 .image-list img {
     width: 100px;
-    height: auto;
+    height: 60px;
     margin-bottom: 10px;
     cursor: pointer;
     border: 2px solid transparent;
     transition: border-color 0.3s ease;
-    object-fit: cover;
+    object-fit: contain;
+    filter: brightness(0.5);
+    border-radius: 8px;
+    background-color: black;
 }
 
 .image-list img:hover {
@@ -241,22 +266,25 @@ body {
 .image-list img.selected {
     border-color: var(--accent-default);
     border-radius : 8px;
+    filter: none;
 }
 
 div#spectacle-select {
     display: flex;
     flex-wrap: nowrap;
-    height: 5vh;
+    height: 10vh;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
     margin: 1vh 0px;
+    overflow: auto hidden;
+    padding: 2px 5px;
 }
 
 #spectacle-select button.selected {
-    border-color: var(--accent-default) ! important;
-    background: var(--background-default);
-    color: var(--color-default);
-    border-bottom-color: var(--background-default) ! important;
+    border-color: var(--accent-default);
+    background: var(--background-default2);
+    color: var(--color-default2);
+    border-bottom-color: var(--background-default2);
 }
 
 #spectacle-select button {
@@ -265,11 +293,11 @@ div#spectacle-select {
     border: 2px solid;
     margin: 0px 5px;
     background: var(--accent-default);
+    border-bottom-color: var(--accent-default);
     transition: all 500ms;
     font-weight: bold;
-    color: black;
-    border-color: var(--background-default) !important;
-    border-bottom-color: var(--accent-default) ! important;
+    font-size: 14px;
+    
 }
 
 #spectacle-select button:hover {
@@ -278,4 +306,31 @@ div#spectacle-select {
     color: black;
     border-color: var(--background-default);
 
+}
+
+#spectacledescription #date {
+    min-width: fit-content;
+}
+
+#controlscontainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-top: 14px;
+}
+
+#controlscontainer #link {
+    margin-right: 10px;
+    color: var(--color-default);
+    background: var(--accent-default);
+    border-radius: 8px;
+    padding: 8px 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 500ms;
+}
+
+#controlscontainer #link:hover {
+    background : var(--accent-default3);
+    scale : 1.1;
 }

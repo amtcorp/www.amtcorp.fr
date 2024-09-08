@@ -1,44 +1,45 @@
-<html lang="en"><head>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Slider</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
- <div id="spectacle-select">
-    <!-- Les boutons seront générés ici dynamiquement -->
-</div>
-    <div class="slider-container">
-        <div class="slider">
-            <svg class="prev" onclick="prevImage()" xmlns="http://www.w3.org/2000/svg" version="1.0" width="128.000000pt" height="128.000000pt" viewBox="0 0 128.000000 128.000000" preserveAspectRatio="xMidYMid meet" id="slidecontroller">
-<g transform="translate(0.000000,128.000000) scale(0.100000,-0.100000)" stroke="none">
-<path d="M845 1265 c-37 -20 -551 -530 -571 -567 -17 -33 -18 -86 -1 -113 7 -11 138 -144 292 -296 211 -208 288 -278 311 -283 90 -20 174 86 133 167 -6 12 -111 122 -232 244 l-222 223 227 227 c196 198 227 233 234 267 17 96 -87 176 -171 131z"></path>
-</g>
-</svg>
-            <svg class="next" onclick="nextImage()" xmlns="http://www.w3.org/2000/svg" version="1.0" width="128.000000pt" height="128.000000pt" viewBox="0 0 128.000000 128.000000" preserveAspectRatio="xMidYMid meet" id="slidecontroller">
-<g transform="translate(0.000000,128.000000) scale(0.100000,-0.100000)" stroke="none">
-<path d="M333 1265 c-58 -25 -89 -104 -62 -158 6 -12 111 -122 232 -244 l222 -223 -227 -227 c-198 -200 -227 -233 -234 -268 -15 -80 62 -155 144 -140 32 6 77 47 310 278 151 150 280 284 288 299 17 33 18 86 1 113 -24 40 -563 564 -590 574 -36 14 -45 13 -84 -4z"></path>
-</g>
-</svg>
-            
-        <div id="current-image" src="" alt="Slider Image"></div><div class="controls">
-            <button class="pausebutton" onclick="toggleSlider()"><img src="./assets/icons/pause.png" <="" button=""></button>
-        </div></div>
-        <div class="info">
-            <h2 id="title"></h2>
-            <div id="spectacledescription"><p id="audience"></p><p id="duration"></p><p id="date"></p></div>
-<p id="description"></p>
-            
-            
-            
-        </div>
-        
-    </div>
-    <div class="image-list">
-        <!-- Images will be generated here dynamically -->
-    </div>
-
-    <script src="script.js"></script>
-
-
-</body></html>
+    <div id="spectacle-select">
+       <!-- Les boutons seront générés ici dynamiquement -->
+   </div>
+       <div class="slider-container">
+           <div class="slider">
+               <svg class="prev" onclick="prevImage()" xmlns="http://www.w3.org/2000/svg" version="1.0" width="128.000000pt" height="128.000000pt" viewBox="0 0 128.000000 128.000000" preserveAspectRatio="xMidYMid meet" id="slidecontroller">
+   <g transform="translate(0.000000,128.000000) scale(0.100000,-0.100000)" stroke="none">
+   <path d="M845 1265 c-37 -20 -551 -530 -571 -567 -17 -33 -18 -86 -1 -113 7 -11 138 -144 292 -296 211 -208 288 -278 311 -283 90 -20 174 86 133 167 -6 12 -111 122 -232 244 l-222 223 227 227 c196 198 227 233 234 267 17 96 -87 176 -171 131z"></path>
+   </g>
+   </svg>
+               <svg class="next" onclick="nextImage()" xmlns="http://www.w3.org/2000/svg" version="1.0" width="128.000000pt" height="128.000000pt" viewBox="0 0 128.000000 128.000000" preserveAspectRatio="xMidYMid meet" id="slidecontroller">
+   <g transform="translate(0.000000,128.000000) scale(0.100000,-0.100000)" stroke="none">
+   <path d="M333 1265 c-58 -25 -89 -104 -62 -158 6 -12 111 -122 232 -244 l222 -223 -227 -227 c-198 -200 -227 -233 -234 -268 -15 -80 62 -155 144 -140 32 6 77 47 310 278 151 150 280 284 288 299 17 33 18 86 1 113 -24 40 -563 564 -590 574 -36 14 -45 13 -84 -4z"></path>
+   </g>
+   </svg>
+               
+           <div id="current-image" src="" alt="Slider Image"></div><div class="controls">
+               <button class="pausebutton" onclick="toggleSlider()"><img src="https://www.amtcorp.fr/spectacles/assets/icons/pause.png" ></button>
+           </div></div>
+           <div class="info">
+               <h2 id="title"></h2>
+               <div id="spectacledescription"><p id="audience"></p><p id="duration"></p><p id="date"></p></div>
+               <div id="controlscontainer">
+                   <a id="link" href="" target="_blank">Télécharger la plaquette</a>
+               </div> 
+   <p id="description"></p>
+           
+               
+           </div>
+           
+       </div>
+       <div class="image-list">
+           <!-- Images will be generated here dynamically -->
+       </div>
+</body>
+<script type="text/javascript" src="./script.js"></script>
+</html>
