@@ -1,11 +1,8 @@
 document.getElementById('downloadBtn').addEventListener('click', function() {
-    // Faire une requête pour récupérer le contenu du fichier existant
+    // Faire une requête pour récupérer le fichier PDF
     fetch('./plaquettes/Atelier_bdf.pdf')
-        .then(response => response.text())  // Convertir en texte
-        .then(contenuFichier => {
-            // Créer un Blob avec le contenu du fichier
-            let fichierBlob = new Blob([contenuFichier], { type: 'text/plain' });
-            
+        .then(response => response.blob())  // Lire le fichier comme un blob
+        .then(fichierBlob => {
             // Créer un lien de téléchargement
             let lienTelechargement = document.createElement('a');
             lienTelechargement.href = URL.createObjectURL(fichierBlob);
@@ -17,4 +14,4 @@ document.getElementById('downloadBtn').addEventListener('click', function() {
         .catch(error => {
             console.error('Erreur lors du téléchargement du fichier:', error);
         });
-})
+});
