@@ -41,7 +41,7 @@ body {
     font-family: Leelawadee ui , Arial;
     font-size: var(--font-size);
     letter-spacing: 0.05rem;
-    background: var(--background-default);
+    background: ghostwhite;);
     /* background: url(https://www.websdrbordeaux.fr/fond.jpg); */
     background-position: bottom;
     background-size: cover;
@@ -340,8 +340,4 @@ transition: all 500ms ease;
 
 #menu button img {
     height: 1.8rem;
-}
-
-#menu button span {
-    color: black;
 }
