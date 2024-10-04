@@ -341,3 +341,7 @@ transition: all 500ms ease;
 #menu button img {
     height: 1.8rem;
 }
+
+#menu button span {
+    color: black;
+}
