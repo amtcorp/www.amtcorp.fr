@@ -2,7 +2,7 @@
 
 const displayboxstylemodule = document.createElement('link');
 displayboxstylemodule.rel = 'stylesheet';
-displayboxstylemodule.href = './modules/amt corp/Amt-Ui-Pro-Alert-Module.css';
+displayboxstylemodule.href = './modules/Amt corp/Amt-Ui-Pro-Alert-Module.css';
 document.head.appendChild(displayboxstylemodule);
 
 const elementdisplaybox = document.createElement('div');
