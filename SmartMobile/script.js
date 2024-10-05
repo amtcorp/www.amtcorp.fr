@@ -28,23 +28,9 @@ fetch('https://www.amtcorp.fr/assets/logos/jojo cash/logo.svg')
   logocontainer.onclick = () => { document.location ="" };
 
 
-var buttons = document.querySelectorAll('button.animated2');
+var buttons = document.querySelectorAll('#menu button');
 
 buttons.forEach((button , buttonsindex) => {
-  var buttontextcontent = button.querySelector('span.animated');
-button.onmouseenter = () => {
-        buttontextcontent.scrollTo({
-            top: buttontextcontent.scrollHeight,
-            behavior: 'smooth'
-          });
-        }
-
-        button.onmouseleave = () => {
-          buttontextcontent.scrollTo({
-              top: 0,
-              behavior: 'smooth'
-          });
-            }
 
             button.onclick = () => {
               buttonalert = 'button number ' + ' '  + (buttonsindex + 1) + ' ' + button.textContent
