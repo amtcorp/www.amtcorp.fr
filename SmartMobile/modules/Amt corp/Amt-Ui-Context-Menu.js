@@ -40,7 +40,7 @@ document.addEventListener("click", function(event) {
 
   }
 });
-  //event.preventDefault();
+  event.preventDefault();
 } else {
 
 }
