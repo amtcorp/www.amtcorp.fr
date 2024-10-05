@@ -2,7 +2,7 @@
 
 const contextmenumodulestyle = document.createElement('link');
 contextmenumodulestyle.rel = 'stylesheet';
-contextmenumodulestyle.href = './modules/amt corp/Amt-Ui-context-menu.css';
+contextmenumodulestyle.href = './modules/Amt corp/Amt-Ui-context-menu.css';
 document.head.appendChild(contextmenumodulestyle);
 const loadIconsBtn = document.createElement('button');
 const uninstallBtn = document.createElement('button');
